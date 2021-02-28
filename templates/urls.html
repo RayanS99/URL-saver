@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>All URLs</title> 
+{% endblock %}
+
+{% block body %}
+<br>
+<div>
+    <h1 style="display:inline">All URLs</h1>
+    <a style="display:inline" class="btn btn-success float-right" href="/urls/new" >+ New URL</a>
+</div>
+    <hr>
+
+    {% for url in urls %}
+        <h2>{{ url.title }}</h2> 
+        <br>
+        
+        <p style="white-space:pre-wrap"><img src="{{ url_for('static', filename='images/link.png') }}" alt='link' height=20px width=20px><a href="{{ url.content }}"> {{ url.content }}</a></p>
+        <br>
+        <a class="btn btn-primary" href='/urls/delete/{{url.id}}'>Delete</a>
+        <br>
+        <hr>
+    {% endfor%}
+
+{% endblock %}

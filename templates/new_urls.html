@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>New URL</title> 
+{% endblock %}
+
+{% block body %}
+<br>
+<h1>New URL</h1>
+
+    <hr>
+    <h2>Create and save new URL:</h2>
+    <form action='/urls' method='POST'>
+        <label for="title">Title:</label>
+        <input class="form-control" type="text" name='title' id='title' placeholder="Enter Title" aria-label="Enter Title">
+        <br>
+        <label for="content">URL:</label>
+        <input class="form-control" type='url' name='content' id="content" placeholder="Paste URL Here!" aria-label="Enter URL">
+        <br>
+        <input type='submit' value='Save'>
+    </form>
+    <hr>
+{% endblock %}
